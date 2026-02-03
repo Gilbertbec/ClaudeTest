@@ -10,7 +10,7 @@ permissions:
   contents: read
 
 env:
-  AZURE_RESOURCE_GROUP: rg-kvfuncapp-eastus
+  AZURE_RESOURCE_GROUP: rg-kvfuncapp-cc
   BICEP_FILE: infra/main.bicep
   BICEP_PARAMS: infra/main.bicepparam
   FUNCTION_APP_NAME: func-kvfuncapp
