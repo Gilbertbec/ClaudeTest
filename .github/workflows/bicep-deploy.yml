@@ -16,10 +16,10 @@ permissions:
   contents: read
 
 env:
-  AZURE_RESOURCE_GROUP: rg-kvfuncapp
+  AZURE_RESOURCE_GROUP: rg-kvfuncapp-eastus
   BICEP_FILE: infra/main.bicep
   BICEP_PARAMS: infra/main.bicepparam
-  LOCATION: eastus2
+  LOCATION: eastus
 
 jobs:
   validate:

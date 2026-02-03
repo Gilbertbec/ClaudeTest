@@ -1,4 +1,4 @@
 using './main.bicep'
 
 param baseName = 'kvfuncapp'
-param location = 'eastus2'
+param location = 'eastus'
