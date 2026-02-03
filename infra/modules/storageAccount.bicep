@@ -19,6 +19,12 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2023-05-01' = {
   }
 }
 
+@description('The storage account name.')
 output storageAccountName string = storageAccount.name
+
+@description('The storage account resource ID.')
 output storageAccountId string = storageAccount.id
+
+@description('The primary connection string (contains secret).')
+#disable-next-line outputs-should-not-contain-secrets
 output primaryConnectionString string = 'DefaultEndpointsProtocol=https;AccountName=${storageAccount.name};EndpointSuffix=${environment().suffixes.storage};AccountKey=${storageAccount.listKeys().keys[0].value}'

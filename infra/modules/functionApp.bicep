@@ -24,13 +24,13 @@ resource functionApp 'Microsoft.Web/sites@2023-12-01' = {
     serverFarmId: appServicePlanId
     httpsOnly: true
     siteConfig: {
-      netFrameworkVersion: 'v8.0'
+      netFrameworkVersion: 'v9.0'
       appSettings: [
-        { name: 'AzureWebJobsStorage'; value: storageAccountConnectionString }
-        { name: 'FUNCTIONS_EXTENSION_VERSION'; value: '~4' }
-        { name: 'FUNCTIONS_WORKER_RUNTIME'; value: 'dotnet-isolated' }
-        { name: 'WEBSITE_USE_PLACEHOLDER_DOTNETISOLATED'; value: '1' }
-        { name: 'KEY_VAULT_URI'; value: keyVaultUri }
+        { name: 'AzureWebJobsStorage', value: storageAccountConnectionString }
+        { name: 'FUNCTIONS_EXTENSION_VERSION', value: '~4' }
+        { name: 'FUNCTIONS_WORKER_RUNTIME', value: 'dotnet-isolated' }
+        { name: 'WEBSITE_USE_PLACEHOLDER_DOTNETISOLATED', value: '1' }
+        { name: 'KEY_VAULT_URI', value: keyVaultUri }
       ]
     }
   }
