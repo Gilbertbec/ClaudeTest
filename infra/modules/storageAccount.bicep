@@ -4,10 +4,12 @@ param baseName string
 @description('Azure region for the resource.')
 param location string = resourceGroup().location
 
-var storageAccountName = replace(toLower('st${baseName}'), '-', '')
+var uniqueSuffix = uniqueString(resourceGroup().id)
+var rawName = replace(toLower('st${baseName}${uniqueSuffix}'), '-', '')
+var storageAccountName = substring(rawName, 0, min(length(rawName), 24))
 
 resource storageAccount 'Microsoft.Storage/storageAccounts@2023-05-01' = {
-  name: length(storageAccountName) > 24 ? substring(storageAccountName, 0, 24) : storageAccountName
+  name: storageAccountName
   location: location
   sku: {
     name: 'Standard_LRS'
