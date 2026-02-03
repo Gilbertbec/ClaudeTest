@@ -15,7 +15,7 @@ env:
   BICEP_PARAMS: infra/main.bicepparam
   FUNCTION_APP_NAME: func-kvfuncapp
   FUNCTION_PROJECT_PATH: src/KeyVaultFunction
-  DOTNET_VERSION: '8.0.x'
+  DOTNET_VERSION: '9.0.x'
 
 jobs:
   deploy-infra:
